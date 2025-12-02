@@ -2,144 +2,129 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Aniversário da Gi</title>
+  <title>Convite Magagi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fde7f3 0%, #e8f4ff 50%, #fde7f3 100%);
+      color: #333;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #89CFF0, #F4C2C2);
     }
 
     .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 30px 25px;
       width: 100%;
-      max-width: 430px;
-      background: rgba(255,255,255,0.45);
-      backdrop-filter: blur(10px);
-      border-radius: 25px;
-      padding: 30px 22px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      text-align: center;
+      max-width: 420px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     h1 {
       margin: 0;
       font-size: 26px;
       font-weight: 700;
-      color: #fff;
+      color: #800080;
     }
 
     h2 {
       margin-top: 8px;
       font-size: 18px;
       font-weight: 300;
-      color: #fff;
+      color: #800080;
     }
 
     .info {
-      margin-top: 25px;
-      color: #fff;
-      line-height: 2;
+      text-align: center;
+      margin-bottom: 25px;
+      line-height: 1.8;
       font-size: 15px;
     }
 
     .recado {
-      margin-top: 25px;
-      background: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15);
       padding: 15px;
-      border-radius: 15px;
-      color: #fff;
-      font-style: italic;
-    }
-
-    .section-title {
-      margin: 25px 0 10px;
-      color: #5a4b7a;
-      font-weight: 500;
-    }
-
-    iframe {
       border-radius: 12px;
-      border: none;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 25px;
     }
 
     form {
-      margin-top: 25px;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
 
-    input, textarea {
-      border-radius: 12px;
+    input, textarea, button {
+      border-radius: 10px;
       border: none;
       padding: 12px;
-      font-size: 14px;
       font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    input, textarea {
+      outline: none;
     }
 
     button {
-      margin-top: 10px;
       background: #f8c8dc;
-      border: none;
-      border-radius: 14px;
-      padding: 14px;
-      font-size: 15px;
+      color: #000;
       font-weight: 600;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.03);
     }
 
     footer {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 20px;
     }
   </style>
 </head>
-
 <body>
 
   <div class="card">
-
     <h1>Aniversário da Gi</h1>
-    <h2>Vamos lá?</h2>
+    <h2>Tema: Magagi</h2>
 
     <div class="info">
       📅 <strong>14 de dezembro</strong><br>
       ⏰ <strong>13h</strong><br>
-      📍 <strong>Salão de festas – Condomínio Águas do Madeira</strong><br>
-      🎈 <strong>Tema: Magagi</strong>
+      📍 <strong>Salão de festas - Condomínio Águas do Madeira</strong>
     </div>
 
     <div class="recado">
       "Vista-se de uma versão minha e venha comemorar."
     </div>
 
-    <div class="section-title">🎵</div>
-    <iframe width="100%" height="180"
-      src="https://www.youtube.com/embed/TUVcZfQe-Kw"
-      allowfullscreen>
-    </iframe>
+    <div style="text-align:center; margin-bottom: 20px;">
+      <p style="margin-bottom:8px; font-weight:500;">🎵 Clima da festa</p>
+      <iframe width="100%" height="180" src="https://www.youtube.com/embed/TUVcZfQe-Kw" title="Dua Lipa - Levitating" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
 
-    <div class="section-title">📍 Local da Festa</div>
-    <iframe
-      width="100%"
-      height="220"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps?q=Salão%20de%20Festas%20Condomínio%20Residencial%20Águas%20do%20Madeira%2C%20Av.%20Rio%20Madeira%2C%204086%20-%20Porto%20Velho%20-%20RO&output=embed">
-    </iframe>
+    <div style="text-align:center; margin-bottom: 25px;">
+      <p style="margin-bottom:8px; font-weight:500;">🗺️ Local da Festa</p>
+      <iframe width="100%" height="220" style="border:0; border-radius:12px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Condomínio%20Águas&output=embed">
+      </iframe>
+    </div>
 
     <form action="https://formsubmit.co/jeovanajully@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="Confirmação de Presença - Aniversário da Gi">
+      <input type="hidden" name="_subject" value="Confirmação de Presença - Festa Magagi">
 
       <input type="text" name="nome" placeholder="Seu nome" required>
       <input type="number" name="quantidade" placeholder="Quantas pessoas irão?" required>
@@ -149,9 +134,8 @@
     </form>
 
     <footer>
-      Te espero, viu? 💖
+      Esperamos você! 💖
     </footer>
-
   </div>
 
 </body>
