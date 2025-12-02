@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+}
+
+
+.recado {
+background: rgba(255,255,255,0.15);
+padding: 15px;
+border-radius: 12px;
+text-align: center;
+font-style: italic;
+margin-bottom: 25px;
+}
+
+
+form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+
+input, textarea, button {
+border-radius: 10px;
+border: none;
+padding: 12px;
+font-family: 'Poppins', sans-serif;
+font-size: 14px;
+}
+
+
+input, textarea {
+outline: none;
+}
+
+
+button {
+background: #f8c8dc;
+color: #000;
+font-weight: 600;
+cursor: pointer;
+transition: 0.3s;
+}
+
+
+button:hover {
+transform: scale(1.03);
+}
+
+
+footer {
+text-align: center;
+font-size: 12px;
+opacity: 0.8;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="card">
+<h1>Magagi</h1>
+<h2>Você está convidado(a)!</h2>
+
+
+<div class="info">
+📅 <strong>14 de dezembro</strong><br>
+⏰ <strong>13h</strong><br>
+📍 <strong>Condomínio Águas</strong><br>
+🎈 Tema: <strong>Magagi</strong>
+</div>
+
+
+<div class="recado">
+"Vista-se de uma versão minha e venha comemorar."
+</div>
+
+
+<div style="text-align:center; margin-bottom: 20px;">
+<p style="margin-bottom:8px; font-weight:500;">🎵 Clima da festa</p>
+<iframe width="100%" height="180" src="https://www.youtube.com/embed/TUVcZfQe-Kw" title="Dua Lipa - Levitating" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+
+<div style="text-align:center; margin-bottom: 25px;">
+<p style="margin-bottom:8px; font-weight:500;">🗺️ Local da Festa</p>
+<iframe width="100%" height="220" style="border:0; border-radius:12px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+src="https://www.google.com/maps?q=Condomínio%20Águas&output=embed">
+</iframe>
+</div>
+
+
+<form action="https://formsubmit.co/jeovanajully@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Confirmação de Presença - Festa Magagi">
+
+
+<input type="text" name="nome" placeholder="Seu nome" required>
+<input type="number" name="quantidade" placeholder="Quantas pessoas irão?" required>
+<textarea name="mensagem" placeholder="Mensagem (opcional)"></textarea>
+
+
+<button type="submit">✅ Confirmar Presença</button>
+</form>
+
+
+<footer>
+Esperamos você! 💖
+</footer>
+</div>
+
+
+</body>
+</html>
