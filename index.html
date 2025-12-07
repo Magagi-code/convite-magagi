@@ -6,61 +6,83 @@
   <title>Convite de Aniversário</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(#ffd8f0, #d8e9ff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffd8f0 0%, #d8e9ff 100%);
       margin: 0;
       padding: 20px;
       color: #6a0dad;
       text-align: center;
+      min-height: 100vh;
     }
     .card {
-      max-width: 600px;
-      margin: auto;
+      max-width: 500px;
+      margin: 0 auto;
       background: white;
-      padding: 25px;
+      padding: 30px 20px;
       border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(106, 13, 173, 0.15);
       color: #6a0dad;
     }
+    h1 { font-size: 24px; margin-bottom: 20px; }
+    h2 {
+      font-size: 20px;
+      margin-top: 25px;
+      border-bottom: 2px solid #f4b5ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p { line-height: 1.6; margin: 10px 0; }
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #6a0dad;
+      box-shadow: 0 0 5px rgba(106, 13, 173, 0.2);
     }
     button {
-      background: #f4b5ff;
-      color: #6a0dad;
-      padding: 12px 20px;
+      background: #6a0dad;
+      color: white;
+      padding: 15px 30px;
       border: none;
-      border-radius: 8px;
+      border-radius: 50px;
       cursor: pointer;
       font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+      width: 100%;
+      transition: transform 0.2s;
     }
+    button:hover { transform: scale(1.02); background: #580b90; }
+    iframe { border-radius: 12px; margin-bottom: 15px; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>🎉 Almoço de Aniversário Improvisado 🎉</h1>
 
-    <!-- Música Dua Lipa (vídeo embed) -->
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/kPa7bsKwL-c" title="Dua Lipa" frameborder="0" allowfullscreen></iframe>
+  <div class="card">
+    <h1>Almoço de Aniversário Improvisado 🎉</h1>
+
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/kPa7bsKwL-c" title="Dua Lipa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <h2>📅 Informações da Festa</h2>
     <p><strong>Horário:</strong> 13h</p>
-    <p><strong>Tema:</strong> Eu! Vista-se de uma versão minha e vamos comemorar! 💖</p>
-    <p><strong>Endereço:</strong> Salão de festas do Condomínio Águas do Madeira – Porto Velho, Rondônia</p>
+    <p><strong>Tema:</strong> "Eu!" <br>Vista-se de uma versão minha e vamos comemorar! 💖</p>
+    
+    <p><strong>Local:</strong> Salão de festas do Condomínio Águas do Madeira</p>
+    <p style="font-size: 14px; color: #555;">
+      Av. Prefeito Chiquilito Erse (antiga Rio Madeira), 4086<br>
+      Bairro Rio Madeira - Porto Velho, RO
+    </p>
 
-    <h2>Confirme sua Presença</h2>
-    <form action="https://formspree.io/f/xxxxxxx" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="email" name="email" placeholder="Seu e-mail" required>
-      <textarea name="mensagem" rows="4" placeholder="Deixe uma mensagem"></textarea>
-      <button type="submit">Enviar Confirmação</button>
-    </form>
-
-    <p style="margin-top:15px; font-size:14px; color:#777;">Sua confirmação será enviada diretamente para meu e-mail 💌</p>
-  </div>
-</body>
-</html>
+    <h2>💌 Confirme sua Presença</h2>
+    
+    <form action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome completo" required>
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+      <textarea name="mensagem" rows="3" placeholder="Sua mensagem..."></textarea>
