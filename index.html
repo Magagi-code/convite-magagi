@@ -23,7 +23,12 @@
       box-shadow: 0 10px 25px rgba(106, 13, 173, 0.15);
       color: #6a0dad;
     }
-    h1 { font-size: 24px; margin-bottom: 20px; }
+    h1 { 
+      font-size: 24px; 
+      margin-bottom: 20px; 
+      text-transform: uppercase; /* Força caixa alta automaticamente */
+      letter-spacing: 1px; /* Dá um espacinho entre as letras pra ficar mais chique */
+    }
     h2 {
       font-size: 20px;
       margin-top: 25px;
@@ -99,7 +104,7 @@
 <body>
 
   <div class="card">
-    <h1>🎉 Almoço de Aniversário Improvisado 🎉</h1>
+    <h1>🎉 ALMOÇO DE ANIVERSÁRIO IMPROVISADO 🎉</h1>
 
     <iframe width="100%" height="250" src="https://www.youtube.com/embed/TUVcZfQe-Kw" title="Dua Lipa - Levitating" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -113,9 +118,9 @@
         <p style="font-size: 14px; color: #555;">Av. Prefeito Chiquilito Erse (antiga Rio Madeira), 4086 - Bairro Rio Madeira, Porto Velho/RO</p>
         
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.438562308964!2d-63.8776757!3d-8.7404344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9232434e66c7fbe7%3A0xe50160206b90d07b!2sCondom%C3%ADnio%20Residencial%20%C3%81guas%20do%20Madeira!5e0!3m2!1spt-BR!2sbr!4v1709845000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.516584282857!2d-63.87986438867499!3d-8.737332291272782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9232524e66c7fbf7%3A0xe50120906b90d07b!2sCondom%C3%ADnio%20Residencial%20%C3%81guas%20do%20Madeira!5e0!3m2!1spt-BR!2sbr!4v1733602400000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p style="font-size:12px; margin-top: 8px; text-align: right;"><a href="https://maps.app.goo.gl/3QWjX4q8JqJqJqJq8" target="_blank" style="color:#6a0dad; text-decoration:none;">Abrir no GPS ↗</a></p>
+        <p style="font-size:12px; margin-top: 8px; text-align: right;"><a href="https://maps.app.goo.gl/g6qG8vX6qG8vX6qG8" target="_blank" style="color:#6a0dad; text-decoration:none;">Abrir no GPS ↗</a></p>
     </div>
 
     <h2>💌 Confirme sua Presença</h2>
@@ -148,7 +153,7 @@
         mode: 'no-cors'
       })
       .then(() => {
-        alert("Oba! Sua presença foi confirmada! Te espero lá. 💖");
+        alert("Aê! Sua presença foi confirmada! Te espero lá. 💖");
         form.reset();
         button.innerText = 'Enviar Confirmação';
         button.disabled = false;
