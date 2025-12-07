@@ -70,6 +70,8 @@
       height: 0;
       overflow: hidden;
       border-radius: 12px;
+      margin-top: 15px;
+      border: 1px solid #eee;
     }
     .map-container iframe {
       position: absolute;
@@ -77,6 +79,20 @@
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    .address-box {
+        background-color: #f9f0ff;
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 15px;
+        text-align: left;
+    }
+    .address-box p {
+        margin: 5px 0;
+        font-size: 15px;
+    }
+    .address-box strong {
+        color: #580b90;
     }
   </style>
 </head>
@@ -91,11 +107,16 @@
     <p><strong>Horário:</strong> 13h</p>
     <p><strong>Tema:</strong> "Eu!" <br>Vista-se de uma versão minha e vamos comemorar! 💖</p>
     
-    <p><strong>Local:</strong> Salão de festas do Condomínio Águas do Madeira</p>
-    <p style="font-size: 14px; color: #555;">
-      Av. Prefeito Chiquilito Erse (antiga Rio Madeira), 4086<br>
-      Bairro Rio Madeira - Porto Velho, RO
-    </p>
+    <div class="address-box">
+        <p><strong>📍 Onde vai ser:</strong></p>
+        <p>Salão de festas do Condomínio Águas do Madeira</p>
+        <p style="font-size: 14px; color: #555;">Av. Prefeito Chiquilito Erse (antiga Rio Madeira), 4086 - Bairro Rio Madeira, Porto Velho/RO</p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.438562308964!2d-63.8776757!3d-8.7404344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9232434e66c7fbe7%3A0xe50160206b90d07b!2sCondom%C3%ADnio%20Residencial%20%C3%81guas%20do%20Madeira!5e0!3m2!1spt-BR!2sbr!4v1709845000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p style="font-size:12px; margin-top: 8px; text-align: right;"><a href="https://maps.app.goo.gl/3QWjX4q8JqJqJqJq8" target="_blank" style="color:#6a0dad; text-decoration:none;">Abrir no GPS ↗</a></p>
+    </div>
 
     <h2>💌 Confirme sua Presença</h2>
     
@@ -107,12 +128,6 @@
     </form>
     <p style="margin-top:10px; font-size:12px; color:#999;">A confirmação chega direto pra mim!</p>
 
-    <h2>📍 Localização</h2>
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.686689025176!2d-63.87986438521568!3d-8.740445093717467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9232514e66c7fbf7%3A0xe50160206b90d079!2sCondom%C3%ADnio%20Residencial%20%C3%81guas%20do%20Madeira!5e0!3m2!1spt-BR!2sbr!4v1677600000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <p style="font-size:12px; margin-top: 10px;"><a href="https://maps.app.goo.gl/seuLinkAqui" target="_blank" style="color:#6a0dad; text-decoration:none;">Ver no Google Maps ↗</a></p>
-
   </div>
 
   <script>
@@ -120,22 +135,21 @@
     const button = document.getElementById('submitBtn');
 
     form.addEventListener('submit', e => {
-      e.preventDefault(); // Impede que a página recarregue ou vá para a tela branca
+      e.preventDefault();
       
       button.innerText = 'Enviando...';
       button.disabled = true;
 
       const data = new FormData(form);
 
-      // Envia os dados para o Google Script
       fetch(form.action, {
         method: 'POST',
         body: data,
-        mode: 'no-cors' // Importante para scripts do Google
+        mode: 'no-cors'
       })
       .then(() => {
         alert("Oba! Sua presença foi confirmada! Te espero lá. 💖");
-        form.reset(); // Limpa o formulário
+        form.reset();
         button.innerText = 'Enviar Confirmação';
         button.disabled = false;
       })
