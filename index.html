@@ -1,95 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmar Presença</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <title>Convite de Aniversário</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #fde7f3 0%, #e8f4ff 50%, #fde7f3 100%);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#ffd8f0, #d8e9ff);
+      margin: 0;
       padding: 20px;
+      color: #6a0dad;
+      text-align: center;
     }
-
-    .container {
-      max-width: 450px;
+    .card {
+      max-width: 600px;
       margin: auto;
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: #6a0dad;
     }
-
-    h1 {
-      text-align: center;
-      color: #800080;
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-weight: 600;
-      margin-top: 10px;
-      display: block;
-    }
-
-    input, select, textarea {
+    input, textarea {
       width: 100%;
       padding: 10px;
-      border-radius: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      font-size: 14px;
     }
-
     button {
-      width: 100%;
-      padding: 12px;
-      background: #f8c8dc;
+      background: #f4b5ff;
+      color: #6a0dad;
+      padding: 12px 20px;
       border: none;
-      border-radius: 10px;
-      font-weight: 700;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
     }
-
-    button:hover {
-      background: #f4b3d1;
-    }
   </style>
 </head>
-
 <body>
+  <div class="card">
+    <h1>🎉 Almoço de Aniversário Improvisado 🎉</h1>
 
-  <div class="container">
-    <h1>Confirmar Presença 💖</h1>
+    <!-- Música Dua Lipa (vídeo embed) -->
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/kPa7bsKwL-c" title="Dua Lipa" frameborder="0" allowfullscreen></iframe>
 
-    <form action="https://script.google.com/macros/s/AKfycbz0WaTSqmfKsmHBqiq5Q01X_I56EOo4Skb66UtZ42hUW3khDU-8IiaXtfVmxJM-slCi/exec"
-          method="POST">
+    <h2>📅 Informações da Festa</h2>
+    <p><strong>Horário:</strong> 13h</p>
+    <p><strong>Tema:</strong> Eu! Vista-se de uma versão minha e vamos comemorar! 💖</p>
+    <p><strong>Endereço:</strong> Salão de festas do Condomínio Águas do Madeira – Porto Velho, Rondônia</p>
 
-      <label>Nome completo</label>
-      <input type="text" name="nome" required>
-
-      <label>Telefone</label>
-      <input type="text" name="telefone" required>
-
-      <label>Levará acompanhante?</label>
-      <select name="acompanhante" required>
-        <option value="Sim">Sim</option>
-        <option value="Não">Não</option>
-      </select>
-
-      <label>Nome(s) do(s) acompanhante(s)</label>
-      <input type="text" name="nomeAcompanhante">
-
-      <label>Deixe uma mensagem 💖</label>
-      <textarea name="mensagem" rows="3"></textarea>
-
-      <button type="submit">Confirmar Presença</button>
+    <h2>Confirme sua Presença</h2>
+    <form action="https://formspree.io/f/xxxxxxx" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="4" placeholder="Deixe uma mensagem"></textarea>
+      <button type="submit">Enviar Confirmação</button>
     </form>
-  </div>
 
+    <p style="margin-top:15px; font-size:14px; color:#777;">Sua confirmação será enviada diretamente para meu e-mail 💌</p>
+  </div>
 </body>
 </html>
