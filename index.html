@@ -26,8 +26,8 @@
     h1 { 
       font-size: 24px; 
       margin-bottom: 20px; 
-      text-transform: uppercase; /* Força caixa alta automaticamente */
-      letter-spacing: 1px; /* Dá um espacinho entre as letras pra ficar mais chique */
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     h2 {
       font-size: 20px;
@@ -96,8 +96,14 @@
         margin: 5px 0;
         font-size: 15px;
     }
-    .address-box strong {
-        color: #580b90;
+    .note-box {
+        margin-top: 20px;
+        padding: 10px;
+        border: 2px dashed #f4b5ff;
+        border-radius: 10px;
+        color: #d63384;
+        font-weight: bold;
+        background-color: #fff0f6;
     }
   </style>
 </head>
@@ -118,14 +124,18 @@
         <p style="font-size: 14px; color: #555;">Av. Prefeito Chiquilito Erse (antiga Rio Madeira), 4086 - Bairro Rio Madeira, Porto Velho/RO</p>
         
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.516584282857!2d-63.87986438867499!3d-8.737332291272782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9232524e66c7fbf7%3A0xe50120906b90d07b!2sCondom%C3%ADnio%20Residencial%20%C3%81guas%20do%20Madeira!5e0!3m2!1spt-BR!2sbr!4v1733602400000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.416875224344!2d-63.87986438586829!3d-8.740434393718037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9232514e66c7fbf7%3A0xe50160206b90d07b!2sCondom%C3%ADnio%20Residencial%20%C3%81guas%20do%20Madeira!5e0!3m2!1spt-BR!2sbr!4v1701960000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p style="font-size:12px; margin-top: 8px; text-align: right;"><a href="https://maps.app.goo.gl/g6qG8vX6qG8vX6qG8" target="_blank" style="color:#6a0dad; text-decoration:none;">Abrir no GPS ↗</a></p>
+        <p style="font-size:12px; margin-top: 8px; text-align: right;"><a href="https://maps.app.goo.gl/YourMapLinkHere" target="_blank" style="color:#6a0dad; text-decoration:none;">Abrir no GPS ↗</a></p>
+    </div>
+
+    <div class="note-box">
+        🍻 Obs: Bebida alcoólica é por sua conta!
     </div>
 
     <h2>💌 Confirme sua Presença</h2>
     
-    <form id="rsvpForm" action="https://script.google.com/macros/s/AKfycbz0WaTSqmfKsmHBqiq5Q01X_I56EOo4Skb66UtZ42hUW3khDU-8IiaXtfVmxJM-slCi/exec" method="POST">
+    <form id="rsvpForm" action="https://formspree.io/f/myzrkeja" method="POST">
       <input type="text" name="nome" placeholder="Seu nome completo" required>
       <input type="email" name="email" placeholder="Seu e-mail" required>
       <textarea name="mensagem" rows="3" placeholder="Sua mensagem..."></textarea>
@@ -140,7 +150,7 @@
     const button = document.getElementById('submitBtn');
 
     form.addEventListener('submit', e => {
-      e.preventDefault();
+      e.preventDefault(); // Impede o redirecionamento padrão
       
       button.innerText = 'Enviando...';
       button.disabled = true;
@@ -150,17 +160,30 @@
       fetch(form.action, {
         method: 'POST',
         body: data,
-        mode: 'no-cors'
+        headers: {
+            'Accept': 'application/json'
+        }
       })
-      .then(() => {
-        alert("Aê! Sua presença foi confirmada! Te espero lá. 💖");
-        form.reset();
-        button.innerText = 'Enviar Confirmação';
-        button.disabled = false;
+      .then(response => {
+        if (response.ok) {
+            alert("Oba! Sua presença foi confirmada! Te espero lá. 💖");
+            form.reset(); // Limpa os campos
+            button.innerText = 'Enviar Confirmação';
+            button.disabled = false;
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    alert(data["errors"].map(error => error["message"]).join(", "));
+                } else {
+                    alert("Ops! Houve um erro ao enviar. Tente novamente.");
+                }
+                button.innerText = 'Enviar Confirmação';
+                button.disabled = false;
+            })
+        }
       })
       .catch(error => {
-        alert("Ops! Houve um erro ao enviar. Tente novamente ou me chame no WhatsApp!");
-        console.error('Erro:', error);
+        alert("Ops! Houve um erro ao enviar. Tente novamente.");
         button.innerText = 'Enviar Confirmação';
         button.disabled = false;
       });
