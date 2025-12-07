@@ -96,14 +96,19 @@
         margin: 5px 0;
         font-size: 15px;
     }
+    /* Estilo da caixa de avisos */
     .note-box {
         margin-top: 20px;
-        padding: 10px;
+        padding: 15px;
         border: 2px dashed #f4b5ff;
         border-radius: 10px;
+        background-color: #fff0f6;
         color: #d63384;
         font-weight: bold;
-        background-color: #fff0f6;
+        font-size: 14px;
+    }
+    .note-box p {
+        margin: 5px 0;
     }
   </style>
 </head>
@@ -130,7 +135,8 @@
     </div>
 
     <div class="note-box">
-        🍻 Obs: Bebida alcoólica é por sua conta!
+        <p>🍻 Obs: Bebida alcoólica é por sua conta!</p>
+        <p style="margin-top: 8px;">📲 Se for levar acompanhante, me manda o nome no WhatsApp!</p>
     </div>
 
     <h2>💌 Confirme sua Presença</h2>
@@ -150,7 +156,7 @@
     const button = document.getElementById('submitBtn');
 
     form.addEventListener('submit', e => {
-      e.preventDefault(); // Impede o redirecionamento padrão
+      e.preventDefault(); 
       
       button.innerText = 'Enviando...';
       button.disabled = true;
@@ -167,7 +173,7 @@
       .then(response => {
         if (response.ok) {
             alert("Oba! Sua presença foi confirmada! Te espero lá. 💖");
-            form.reset(); // Limpa os campos
+            form.reset(); 
             button.innerText = 'Enviar Confirmação';
             button.disabled = false;
         } else {
